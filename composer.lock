@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crmpbx/phpHttpClient.git",
-                "reference": "3b78fe0d3917de07a551f4f7ae9db1203a9533c2"
+                "reference": "3466cf49b36800de1f4a1ed730beb703befe80a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crmpbx/phpHttpClient/zipball/3b78fe0d3917de07a551f4f7ae9db1203a9533c2",
-                "reference": "3b78fe0d3917de07a551f4f7ae9db1203a9533c2",
+                "url": "https://api.github.com/repos/crmpbx/phpHttpClient/zipball/3466cf49b36800de1f4a1ed730beb703befe80a6",
+                "reference": "3466cf49b36800de1f4a1ed730beb703befe80a6",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "issues": "https://github.com/crmpbx/phpHttpClient/issues",
                 "source": "https://github.com/crmpbx/phpHttpClient/tree/master"
             },
-            "time": "2022-02-28T20:37:23+00:00"
+            "time": "2022-02-28T22:06:52+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

@@ -29,11 +29,11 @@ class Commutator implements Commutable
     /**
      * @throws CommutatorException
      */
-    public function send(string $service, string $route, mixed $data): Response
+    public function send(string $method, string $service, string $route, mixed $data): Response
     {
         $service = self::getService($service);
         return $this->httpClient->getResponse(
-            $this->buildRequest($service, $route, $data),
+            $this->buildRequest($method, $service, $route, $data),
             $this->getTimeout($service)
         );
     }
@@ -41,7 +41,7 @@ class Commutator implements Commutable
     /**
      * @throws CommutatorException
      */
-    private function buildRequest(string $service, string $route, mixed $data): Request
+    private function buildRequest(string $method, string $service, string $route, mixed $data): Request
     {
         $address = $service.'ServiceAddress';
         if(!property_exists($this, $address))
@@ -51,7 +51,7 @@ class Commutator implements Commutable
             Throw new CommutatorException($service.' current service does not initiated', 400);
 
 
-        $rq = new Request($this->$address.self::getRoute($route), $data, $this->getTimeout($service));
+        $rq = new Request($method, $this->$address.self::getRoute($route), $data, $this->getTimeout($service));
         if($auth = $this->getAuth($service))
             $rq->withHeader('XAuthToken', $auth);
 

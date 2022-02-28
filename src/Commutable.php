@@ -6,5 +6,5 @@ use crmpbx\httpClient\Response;
 
 interface Commutable
 {
-    public function send(string $service, string $route, mixed $data) : Response;
+    public function send(string $method, string $service, string $route, mixed $data) : Response;
 }
