@@ -83,6 +83,8 @@ class Commutator implements Commutable
     {
         $arr=explode('-', $service);
         return array_reduce($arr, function ($carry, $item){
+            if($carry === $item)
+                return $carry;
             return $carry.ucfirst($item);
         }, $arr[0]);
     }
