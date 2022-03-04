@@ -4,7 +4,7 @@ namespace crmpbx\commutator\services;
 
 trait PipedriveTrait
 {
-    private string $pipedriveServiceAddress = '';
-    private int $pipedriveServiceTimeout = 1;
-    private string $pipedriveTestServiceAddress = '';
+    public string $pipedriveServiceAddress = '';
+    public int $pipedriveServiceTimeout = 1;
+    public string $pipedriveTestServiceAddress = '';
 }

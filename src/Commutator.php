@@ -13,13 +13,13 @@ class Commutator implements Commutable
 
     use PbxTrait, AmoTrait, LogTrait, ExtensionTrait, PipedriveTrait, NotificationTrait;
 
-    public function __construct(array $config)
+    public function __construct(array $config = [])
     {
         $this->httpClient = new HttpClient();
         $this->init($config);
     }
 
-    private function init(array $config)
+    public function init($config)
     {
         foreach ($config as $prop => $value)
             if(property_exists($this, $prop))

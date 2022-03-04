@@ -4,7 +4,7 @@ namespace crmpbx\commutator\services;
 
 trait LogTrait
 {
-    private string $logServiceAddress = '';
-    private int $logServiceTimeout = 1;
-    private string $logServiceAccessToken = '';
+    public string $logServiceAddress = '';
+    public int $logServiceTimeout = 1;
+    public string $logServiceAccessToken = '';
 }
