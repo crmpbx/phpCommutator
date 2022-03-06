@@ -4,7 +4,7 @@ namespace crmpbx\commutator;
 
 use crmpbx\httpClient\Response;
 
-interface Commutable
+interface CommutatorInterface
 {
-    public function send(string $method, string $service, string $route, mixed $data) : Response;
+    public function send(string $service, string $method, string $route, mixed $data) : Response;
 }

@@ -7,7 +7,7 @@ use crmpbx\httpClient\HttpClient;
 use crmpbx\httpClient\Request;
 use crmpbx\httpClient\Response;
 
-class Commutator implements Commutable
+class Commutator implements CommutatorInterface
 {
     private HttpClient $httpClient;
 
