@@ -29,11 +29,11 @@ class Commutator implements Commutable
     /**
      * @throws CommutatorException
      */
-    public function send(string $method, string $service, string $route, mixed $data): Response
+    public function send(string $service, string $method, string $route, mixed $data): Response
     {
         $service = self::getService($service);
         return $this->httpClient->getResponse(
-            $this->buildRequest($method, $service, $route, $data),
+            $this->buildRequest($service, $method, $route, $data),
             $this->getTimeout($service)
         );
     }
@@ -41,7 +41,7 @@ class Commutator implements Commutable
     /**
      * @throws CommutatorException
      */
-    private function buildRequest(string $method, string $service, string $route, mixed $data): Request
+    private function buildRequest(string $service, string $method, string $route, mixed $data): Request
     {
         $address = $service.'ServiceAddress';
         if(!property_exists($this, $address))
