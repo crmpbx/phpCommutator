@@ -50,10 +50,9 @@ class Commutator implements CommutatorInterface
         if(!$this->$address)
             Throw new CommutatorException($service.' current service does not initiated', 400);
 
-
         $rq = new Request($method, $this->$address.self::getRoute($route), $data, $this->getTimeout($service));
         if($auth = $this->getAuth($service))
-            $rq->withHeader('XAuthToken', $auth);
+            $rq = $rq->withHeader('XAuthToken', $auth);
 
         return $rq;
     }
@@ -76,7 +75,7 @@ class Commutator implements CommutatorInterface
 
     private static function getRoute(string $route): string
     {
-        return str_replace('//', '/', '/'.$route.'/');
+        return str_replace('//', '/', '/'.$route);
     }
 
     private static function getService(string $service): string
