@@ -57,7 +57,7 @@ class Commutator implements CommutatorInterface
         return $rq;
     }
 
-    private function getTimeout($service): int
+    private function getTimeout($service): float
     {
         $timeout = $service.'ServiceTimeout';
         if(property_exists($this, $timeout))
