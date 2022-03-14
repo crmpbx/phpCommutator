@@ -5,5 +5,5 @@ namespace crmpbx\commutator\services;
 trait NotificationTrait
 {
     public string $notificationServiceAddress = '';
-    public int $notificationServiceTimeout = 1;
+    public float $notificationServiceTimeout = 1;
 }
