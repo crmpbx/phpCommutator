@@ -2,12 +2,12 @@
 
 namespace crmpbx\commutator;
 
-use crmpbx\commutator\services\{AmoTrait, LogTrait, NotificationTrait, PbxTrait, PipedriveTrait};
+use crmpbx\commutator\services\{AmoTrait, ExtensionTrait, LogTrait, NotificationTrait, PbxTrait, PipedriveTrait};
 use crmpbx\httpClient\HttpClient;
 use crmpbx\httpClient\Request;
 use crmpbx\httpClient\Response;
 
-class Commutator implements CommutatorInterface
+class Commutator implements Commutable
 {
     private HttpClient $httpClient;
 
